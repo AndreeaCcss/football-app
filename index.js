@@ -1,6 +1,7 @@
 const express = require("express");
 const teamRouter = require("./team/router");
 const playerRouter = require("./player/router");
+const cityRouter = require("./city/router");
 const bodyParser = require("body-parser");
 const jsonParser = bodyParser.json();
 
@@ -11,5 +12,6 @@ app.use(jsonParser);
 
 app.use(teamRouter);
 app.use(playerRouter);
+app.use(cityRouter);
 
 app.listen(port, () => console.log(`Football api listening on port: ${port}`));
