@@ -1,6 +1,7 @@
 const express = require("express");
 // const router = require("./router");
 const db = require("./db");
+const Team = require("./team/model");
 
 const app = express();
 const port = process.env.PORT || 4000;
