@@ -25,4 +25,16 @@ router.get("/team/:teamId", (req, res, next) => {
     })
     .catch(next);
 });
+
+router.put("/team/:teamId", (req, res, next) => {
+  Team.findByPk(req.params.teamId)
+    .then(team => {
+      if (!team) {
+        res.status(404).end();
+      } else {
+        return team.update(req.body).then(team => res.json(team));
+      }
+    })
+    .catch(next);
+});
 module.exports = router;
